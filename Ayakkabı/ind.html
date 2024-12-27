@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spor Ayakkabı Dünyası</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Spor Ayakkabı Dünyası</div>
+        <nav>
+            {% for category_id, category_name in categories.items() %}
+            <a href="{{ url_for('products', category_id=category_id) }}">{{ category_name }}</a>
+            {% endfor %}
+            <a href="{{ url_for('cart') }}">Sepetim</a>
+        </nav>
+    </header>
+
+    <div id="hero" class="hero">
+        <h1>Yeni Sezon Spor Ayakkabılar</h1>
+        <button id="discover-button">Hemen Keşfet</button>
+    </div>
+
+    <footer>
+        <p>© 2024 Spor Ayakkabı Dünyası</p>
+    </footer>
+</body>
+</html>
